@@ -11,14 +11,14 @@
       name="amount"
       />
       <label for="date">Date</label>
-      <input type="text" class="form-control" id="date" [(ngModel)]="currentOperation.date"
-      name="date"
+      <input type="text" class="form-control" id="date" [ngModel]="currentOperation.date | date: 'MM/dd/yyyy'"
+      name="date" (ngModelChange)="currentOperation.date = $event"
       />
-      
       <label for="type">Type</label>
-      <input type="text" class="form-control"  id="type"[(ngModel)]="currentOperation.type" disabled
+      <input type="text"  class="form-control"  id="type"[(ngModel)]="currentOperation.type" disabled
       name="type"
       />
+      
     </div>
   </form>
 
