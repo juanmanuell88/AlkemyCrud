@@ -2,7 +2,7 @@
   <h4>Operation</h4>
   <form>
     <div class="form-group">
-      <label for="title">Concept</label>
+      <label for="concept">Concept</label>
       <input type="text" class="form-control" id="concept"[(ngModel)]="currentOperation.concept"
       name="concept"
       />
@@ -10,9 +10,9 @@
       <input type="text" class="form-control" id="amount"[(ngModel)]="currentOperation.amount"
       name="amount"
       />
-      <label for="date">Date</label>
-      <input type="text" class="form-control" id="date" [ngModel]="currentOperation.date | date: 'MM/dd/yyyy'"
-      name="date" (ngModelChange)="currentOperation.date = $event"
+      <label for="date">Concept</label>
+      <input type="text" class="form-control" id="date"[(ngModel)]="currentOperation.date"
+      name="date"
       />
       <label for="type">Type</label>
       <input type="text"  class="form-control"  id="type"[(ngModel)]="currentOperation.type" disabled

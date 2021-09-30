@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { OperationService } from 'src/app/services/operation.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-operation-details',
@@ -16,16 +18,19 @@ export class OperationDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router) { }
 
+    
+
   ngOnInit() {
     this.message = '';
     this.getOperation(this.route.snapshot.paramMap.get('id'));
-  }
+     }
 
   getOperation(id) {
     this.operationService.get(id)
       .subscribe(
         data => {
           this.currentOperation = data;
+          this.currentOperation.date = moment(this.currentOperation.date).format('L');
           console.log(data);
         },
         error => {
