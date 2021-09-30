@@ -10,15 +10,14 @@
       <input type="text" class="form-control" id="amount"[(ngModel)]="currentOperation.amount"
       name="amount"
       />
-      <label for="date">Concept</label>
-      <input type="text" class="form-control" id="date"[(ngModel)]="currentOperation.date"
+      <label for="date">Date</label>
+      <input type="text" class="form-control" id="date" [textMask]="{mask: phoneMask}"  [(ngModel)]="currentOperation.date"
       name="date"
       />
       <label for="type">Type</label>
       <input type="text"  class="form-control"  id="type"[(ngModel)]="currentOperation.type" disabled
       name="type"
-      />
-      
+      />     
     </div>
   </form>
 

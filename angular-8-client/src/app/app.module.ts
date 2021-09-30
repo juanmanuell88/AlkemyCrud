@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AddOperationComponent } from './components/add-operation/add-operation.component';
 import { OperationDetailsComponent } from './components/operation-details/operation-details.component';
 import { OperationsListComponent } from './components/operations-list/operations-list.component';
+import { TextMaskModule } from 'angular2-text-mask';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { OperationsListComponent } from './components/operations-list/operations
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TextMaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]
