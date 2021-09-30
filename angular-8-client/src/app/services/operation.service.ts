@@ -30,11 +30,4 @@ export class OperationService {
     return this.http.delete(`${baseUrl}/${id}`);
   }
 
-  deleteAll() {
-    return this.http.delete(baseUrl);
-  }
-
- /* findByTitle(title) {
-    return this.http.get(`${baseUrl}?title=${title}`);
-  } */
 }

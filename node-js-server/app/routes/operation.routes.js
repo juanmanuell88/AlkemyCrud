@@ -9,9 +9,6 @@ module.exports = app => {
   // Retrieve all Operations
   router.get("/", operations.findAll);
 
-  // Retrieve all published Operations
-  router.get("/published", operations.findAllPublished);
-
   // Retrieve a single Operation with id
   router.get("/:id", operations.findOne);
 
@@ -20,9 +17,6 @@ module.exports = app => {
 
   // Delete a Operation with id
   router.delete("/:id", operations.delete);
-
-  // Delete all Operation
-  router.delete("/", operations.deleteAll);
 
   app.use('/api/operations', router);
 };

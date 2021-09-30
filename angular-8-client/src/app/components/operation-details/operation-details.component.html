@@ -7,11 +7,11 @@
       name="concept"
       />
       <label for="amount">Amount</label>
-      <input type="text" class="form-control" id="amount"[(ngModel)]="currentOperation.amount"
+      <input type="number" class="form-control" id="amount"[(ngModel)]="currentOperation.amount"
       name="amount"
       />
       <label for="date">Date</label>
-      <input type="text" class="form-control" id="date" [textMask]="{mask: phoneMask}"  [(ngModel)]="currentOperation.date"
+      <input type="text" class="form-control" id="date" [textMask]="{mask: dateMask}"  [(ngModel)]="currentOperation.date"
       name="date"
       />
       <label for="type">Type</label>
@@ -22,10 +22,10 @@
   </form>
 
   <br>
-  <button class="btn btn-danger" (click)="deleteOperation()">
+  <button class="btn btn-danger" (click)="deleteOperation()"> 
     Delete
   </button>
-
+  &nbsp;
   <button type="submit" class="btn btn-primary" (click)="updateOperation()">
     Update
   </button>

@@ -12,7 +12,7 @@ import * as moment from 'moment';
 export class OperationDetailsComponent implements OnInit {
   currentOperation = null;
   message = '';
-  phoneMask = [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/];
+  dateMask = [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/];
   constructor(
     private operationService: OperationService,
     private route: ActivatedRoute,

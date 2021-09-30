@@ -112,33 +112,3 @@ exports.delete = (req, res) => {
     });
 };
 
-// Delete all Operations from the database.
-exports.deleteAll = (req, res) => {
-  Operation.destroy({
-    where: {},
-    truncate: false
-  })
-    .then(nums => {
-      res.send({ message: `${nums} Operations were deleted successfully!` });
-    })
-    .catch(err => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while removing all operations."
-      });
-    });
-};
-
-// find all published Operation
-exports.findAllPublished = (req, res) => {
-  Operation.findAll({ where: { published: true } })
-    .then(data => {
-      res.send(data);
-    })
-    .catch(err => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving operations."
-      });
-    });
-};
