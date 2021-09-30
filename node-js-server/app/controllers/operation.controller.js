@@ -37,7 +37,7 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
   const title = req.query.title;
   var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
-  Operation.findAll({ order: [['id', 'DESC']]})
+  Operation.findAll({ order: [['id', 'DESC']], limit: 10})
     .then(data => {
       res.send(data);
     })
