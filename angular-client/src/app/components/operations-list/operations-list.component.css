@@ -3,3 +3,11 @@
   max-width: 750px;
   margin: auto;
 }
+
+.totals {
+  display: flex;
+}
+
+.total {
+  padding-right: 100px;
+}

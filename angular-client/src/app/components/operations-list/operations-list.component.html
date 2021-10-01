@@ -1,7 +1,5 @@
 <div class="list row">
   <div class="col-md-8">
-    <div class="input-group mb-3">
-    </div>
   </div>
   <div class="col-md-6">
     <h4>Operations Record List</h4>
@@ -15,7 +13,21 @@
         {{ operation.type }}
       </li>
     </ul>
-
+    <br>
+      <div class="totals">
+        <div class="total">
+          <h6>Ingreso</h6>
+          {{ operations.countEntry }}
+          </div>
+          <div class="total">
+          <h6>Egreso</h6>
+          {{ operations.countEgress }}
+          </div>
+          <div class="total">
+          <h6>Balance</h6>
+          {{ operations.balance }}
+        </div>
+      </div>
   </div>
   <div class="col-md-6">
     <div *ngIf="currentOperations">

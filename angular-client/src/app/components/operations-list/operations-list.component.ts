@@ -11,8 +11,7 @@ export class OperationsListComponent implements OnInit {
   operations: any;
   currentOperations = null;
   currentIndex = -1;
-
-
+ 
   constructor(private operationService: OperationService) { }
 
   ngOnInit() {
@@ -24,8 +23,21 @@ export class OperationsListComponent implements OnInit {
     this.operationService.getAll()
       .subscribe(
         data => {
+          var countEntry = 0;
+          var countEgress = 0;
           this.operations = data;
-          console.log(data);
+          this.operations.forEach((element) => {        
+            if (element.type == "Ingreso" ){
+              countEntry = countEntry + element.amount;
+            } else {
+              countEgress = countEgress + element.amount;
+            }
+        });
+        this.operations.countEntry = countEntry;
+        this.operations.countEgress = countEgress;
+        this.operations.balance = countEntry - countEgress;
+        
+        console.log(data);
         },
         error => {
           console.log(error);
